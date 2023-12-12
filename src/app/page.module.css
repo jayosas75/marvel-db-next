@@ -11,6 +11,13 @@
   font-style: italic;
 }
 
+.option {
+  min-width: 90%;
+  max-width: 100%;
+}
+
+.flexRowStart { display: flex; flex-direction: row-wrap; }
+
 .description {
   display: inherit;
   justify-content: inherit;
