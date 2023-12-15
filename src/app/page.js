@@ -1,12 +1,10 @@
 'use client'
 import { createContext, useEffect } from 'react'
 import Image from 'next/image'
+import Header from './components/navbar'
 import { Container,
   ThemeProvider,
   defaultTheme,
-  Navbar,
-  NavLogo,
-  NavItem,
   Text,
   Box,
   Card,
@@ -21,6 +19,9 @@ import { Container,
   Pager,
   TypewriterText,
   SevenSegmentDisplay,
+  Divider,
+  MouseTrail,
+  Scrollbar,
 } from 'retro-react'
 
 // custom components
@@ -53,46 +54,7 @@ const Home = () => {
   }
   return (
     <ThemeProvider theme={myTheme}>
-      <Navbar
-        color="warn"
-        pattern="dots"
-      >
-        <NavLogo>
-          <Text variant='h2' color="secondary" className={styles.templogo}>
-            Quick Marvel Cards
-          </Text>
-        </NavLogo>
-        <NavItem color="primary">
-          <a
-            href="#"
-            onClick={function noRefCheck(){}}
-          >
-            Home
-          </a>
-            </NavItem>
-            <NavItem color="primary">
-              <a
-                href="#"
-                onClick={function noRefCheck(){}}
-              >
-                About
-              </a>
-            </NavItem>
-            <NavItem color="primary">
-              <a
-                href="#"
-                onClick={function noRefCheck(){}}
-              >
-                Contact
-              </a>
-          </NavItem>
-          <SevenSegmentDisplay
-            color="white"
-            segmentThickness="none"
-            value={2}
-            size='small'
-          />
-        </Navbar>
+        <Header />
           <Container
             sx={{
               background: '#000',
@@ -106,7 +68,7 @@ const Home = () => {
           <div>
           <Box
             name='FILTER'
-            color='warn'
+            color='secondary'
             // sx={[
             //   { height: '400px', color: 'red' },
             //   (theme) => ({
@@ -128,7 +90,7 @@ const Home = () => {
               border: 'none'
             }}
           >
-            <Text variant="body2" sx={{m: '.35rem'}}>
+            <Text variant="h6" sx={{m: '.35rem'}}>
               <strong>Options</strong>
             </Text>
             <div
@@ -139,7 +101,7 @@ const Home = () => {
             >
               <Autocomplete
                 clearable
-                color="primary"
+                color="warn"
                 placeholder="Enter Character Name"
                 onSuggestionSelect={function noRefCheck(){}}
                 size="small"
@@ -174,7 +136,7 @@ const Home = () => {
                 variant="filled"
               />
             </div>
-            <RadioGroup className={styles.flexRowStart}>
+            <RadioGroup>
               <Radio
                 color="error"
                 label="All Universe Search"
@@ -182,8 +144,9 @@ const Home = () => {
                 onChange={function noRefCheck(){}}
                 onClick={function noRefCheck(){}}
                 sx={{
-                  m: '.25rem',
-                  fontSize: '1vw',
+                  mx: '.75rem',
+                  my: '.1rem',
+                  fontSize: '1vw'
                 }}
               />
               {/* <Checkbox
@@ -204,7 +167,7 @@ const Home = () => {
                 onChange={function noRefCheck(){}}
                 onClick={function noRefCheck(){}}
                 sx={{
-                  mx: '.25rem',
+                  mx: '.75rem',
                   my: '.1rem',
                   fontSize: '1vw'
                 }}
@@ -234,16 +197,23 @@ const Home = () => {
               }}
             ><Text variant='h6' color="#fff">HISTORY</Text>
             </Box> */}
+            <Divider
+              sx={{width: '95%', mx: '.25rem', mt: '.5rem'}}
+              flexItem
+              color="grayscale"
+              orientation="horizontal"
+            />
             <Tabs
-              color="secondary"
-              defaultActiveTabLabel="tab1"
-              pattern="stars"
-              sx={{width: '90%', bg:'none', ml: '.75rem', my: '1rem'}}
+              color="success"
+              defaultActiveTabLabel="tab2"
+              pattern="dots"
+              sx={{width: '92%', bg:'none', ml: '.60rem', my: '1rem'}}
             >
               <Tab sx={{fontSize: '1.1rem'}} label="tab1">
                 History
               </Tab>
-              <TabContent sx={{bg: 'success', border: '2px solid #504a4a'}} label="tab1">
+              <TabContent sx={{bg: 'success', border: '2px solid #504a4a', maxHeight: '250px', overflowY: 'scroll'}} label="tab1">
+              <Scrollbar theme="grayscale">
               <Select
                 color="secondary"
                 defaultValue=""
@@ -304,12 +274,56 @@ const Home = () => {
                   Galatus
                 </option>
               </Select>
+              </Scrollbar>
               </TabContent>
               <Tab sx={{fontSize: '1.1rem'}} label="tab2">
                 Faves
               </Tab>
-              <TabContent label="tab2">
-                Come as you are, as you were, as I want you to be.
+              
+              <TabContent sx={{bg: 'success', border: '2px solid #504a4a'}} label="tab2">
+              <Select
+                color="secondary"
+                defaultValue=""
+                label="*****" //timestamp
+                onChange={function noRefCheck(){}}
+                size="small"
+                sx={{
+                  width: '100%',
+                  bg: 'success'
+                }}
+              >
+                <option className={styles.option} value="">
+                  Spiderman
+                </option>
+              </Select>
+              <Select
+                color="warn"
+                defaultValue=""
+                label="****" //timestamp
+                onChange={function noRefCheck(){}}
+                size="small"
+                sx={{
+                  width: '100%'
+                }}
+              >
+                <option className={styles.option} value="">
+                  Captain America
+                </option>
+              </Select>
+              <Select
+                color="primary"
+                defaultValue=""
+                label="***" //timestamp
+                onChange={function noRefCheck(){}}
+                size="small"
+                sx={{
+                  width: '100%'
+                }}
+              >
+                <option className={styles.option} value="">
+                  Loki
+                </option>
+              </Select>
               </TabContent>
               <Tab label="tab3">
                 Blocks
@@ -350,7 +364,7 @@ const Home = () => {
               header={<Text sx={{ paddingBottom: '1vh'}} align="left" variant="h4"><TypewriterText
               color="#000000"
               text="Wolverine"
-              typingSpeed={100}
+              typingSpeed={70}
               variant="h4"
             /></Text>}
               image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
@@ -365,12 +379,13 @@ const Home = () => {
                 width: '356px',
                 height: '486px',
               }}
-            >
+            ><Scrollbar theme="grayscale">
               <Text variant="small">
                 Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
                 Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
                 Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
               </Text>
+              </Scrollbar>
             </Card>
             <Card
               alt="Wolverine"
@@ -399,7 +414,7 @@ const Home = () => {
 
           <Box
               name="Pager"
-              pattern='stars'
+              pattern='noise'
               color='primary'
               sx={{
                 alignItems: 'start',
@@ -411,29 +426,65 @@ const Home = () => {
               
               <Container
               sx={{
-                height: '500px',
+                height: '70vh',
                 position: 'relative',
                 width: '100%'
               }}
-            >
+            > <MouseTrail
+            offset={{
+              x: 0,
+              y: 0
+            }}
+            particleColor="rainbow"
+            particleSize={5}
+          />
               <StarField
                 numStars={100}
                 size={2}
                 speed={1}
                 starColor="white"
               /><Pager
-              sx={{position: 'absolute', top: '0', maxWidth: '100%'}}
+              sx={{position: 'absolute', top: '-10px', maxWidth: '100%'}}
               color="greyscale-dark"
               messages={[
-                'Hello',
-                'World',
-                'This',
-                'Is',
-                'A',
-                'Test'
+                'Wolverine Stats',
+                'Weight: 200lbs',
+                'Height: 5\'10"',
+                'Weakness: Jean',
+                'Skill: Retractable Claws',
+                'Skill: Healing',
+                'Skill: Endurance'
               ]}
               onButtonPress={function noRefCheck(){}}
             />
+            {/* <Pager
+              sx={{position: 'absolute', top: '160px', maxWidth: '100%'}}
+              color="greyscale-dark"
+              messages={[
+                'Weight: 200lbs',
+                'Weight: 200lbs',
+                'Height: 5\'10"',
+                'Weakness: Jean',
+                'Skill: Retractable Claws',
+                'Skill: Healing',
+                'Skill: Endurance'
+              ]}
+              onButtonPress={function noRefCheck(){}}
+            />
+            <Pager
+              sx={{position: 'absolute', top: '330px', maxWidth: '100%'}}
+              color="greyscale-dark"
+              messages={[
+                'Height: 5\'10"',
+                'Weight: 200lbs',
+                'Height: 5\'10"',
+                'Weakness: Jean',
+                'Skill: Retractable Claws',
+                'Skill: Healing',
+                'Skill: Endurance'
+              ]}
+              onButtonPress={function noRefCheck(){}}
+            /> */}
             </Container>
             </Box>
         </Container>

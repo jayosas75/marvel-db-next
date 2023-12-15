@@ -8,7 +8,7 @@
 }
 
 .templogo {
-  font-style: italic;
+  font-style:initial;
 }
 
 .option {
@@ -16,7 +16,9 @@
   max-width: 100%;
 }
 
-.flexRowStart { display: flex; flex-direction: row-wrap; }
+.optionstext {
+  font-size: 76px;
+}
 
 .description {
   display: inherit;
