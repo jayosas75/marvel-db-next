@@ -1,5 +1,6 @@
 'use client'
 import { createContext, useEffect, useState } from 'react'
+import styled from 'styled-components'
 import Image from 'next/image'
 import Header from './components/navbar'
 import AppContainer from './components/app_container'
@@ -7,6 +8,7 @@ import OptionsBox from './components/options_box'
 import OptionsTabs from './components/options_tabs'
 import { HeroArr } from './lib/hero_arr'
 import FirstCard from './components/first_card'
+import BackgroundCard from './components/background_card'
 import {allHeroInfo} from './lib/temp_hero_data'
 import { Container,
   ThemeProvider,
@@ -16,6 +18,7 @@ import { Container,
   Card,
   Carousel,
   StarField,
+  Input,
   Autocomplete,
   Checkbox,
   Divider,
@@ -24,6 +27,17 @@ import { Container,
 } from 'retro-react'
 
 import styles from './page.module.css'
+import { traceGlobals } from 'next/dist/trace/shared'
+
+const StyledInput = styled(Input)`
+  width: 100%;
+  backgroundColor: orange;
+`;
+
+const StyledInputs = styled.input`
+  background-color: orange;
+  font-size: 36px;
+`;
 
 // custom components
 // import FlexibleLayoutCustom from './components/flexibleLayout'
@@ -33,7 +47,12 @@ const Context = createContext()
 
 const Home = () => {
   const [activeCardName, setActiveCardName]= useState('');
+  const [nextCardName, setNextCardName]= useState('');
   const [activeCardUrl, setActiveCardUrl] = useState('');
+  // useEffect(() => {
+  //   setActiveCardName('');
+  //   setActiveCardUrl('');
+  // }, []);
   const themeColors = {
     primary: '#e23636',
     secondary: '#518cca',
@@ -61,7 +80,16 @@ const Home = () => {
             <Text variant="h6" sx={{m: '.35rem'}}>
               <strong>Options</strong>
             </Text>
-              <Autocomplete
+            <StyledInput
+              color="warn"
+              onChange={(e) => setActiveCardName(e.target.value)}
+              placeholder="Enter Marvel Query"
+              size="small"
+              variant="filled"
+              maxlength="5"
+            />
+            {/* <StyledInputs /> */}
+              {/* <Autocomplete
                 variant="filled"
                 sx={{mx: '.35rem', fontSize: '.75rem', maxHeight: 'none'}}
                 clearable
@@ -69,14 +97,19 @@ const Home = () => {
                 placeholder="Enter Marvel Query"
                 onSuggestionSelect={(name) => setActiveCardName(name)}
                 // onClick={(e) => setActiveCardUrl(allHeroInfo[e.target.name].imageUrl)}
-                onClick={(e) => console.log(e)}
+                onClick={(e) => {
+                  if(e.key === "Enter"){
+                    console.log(e);
+                  }
+                }}
                 size="small"
                 suggestions={HeroArr}
-              />
+              /> */}
               {activeCardUrl}
               {checkboxes.map((title) => {
                   return (
                     <Checkbox
+                      key={title}
                       color="error"
                       label={title}
                       name="retro-checkbox"
@@ -84,7 +117,7 @@ const Home = () => {
                       onClick={function noRefCheck(){}}
                       sx={{
                         m: '.25rem',
-                        fontSize: '1vw',
+                        fontSize: ['4vw', '2vw', '1vw'],
                         display: 'flex'
                       }}
                     />
@@ -134,7 +167,8 @@ const Home = () => {
             >
               <Box color='success' sx={{padding: '0', display: 'flex'}}>
                 <FirstCard name={activeCardName}/>
-                <Card
+                <BackgroundCard name={nextCardName} />
+                {/* <Card
                   alt="Wolverine"
                   color="warn"
                   footer="All Information from Marvel DB"
@@ -156,10 +190,11 @@ const Home = () => {
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
                   </Text>
-                </Card>
+                </Card> */}
+                
               </Box>
 
-              <Box color='success' sx={{padding: '0', display: 'flex'}}>
+              {/* <Box color='success' sx={{padding: '0', display: 'flex'}}>
                 <Card
                   alt="Wolverine"
                   color="secondary"
@@ -178,12 +213,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -215,9 +245,9 @@ const Home = () => {
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
                   </Text>
                 </Card>
-              </Box>
+              </Box> */}
 
-              <Box color='success' sx={{padding: '0', display: 'flex'}}>
+              {/* <Box color='success' sx={{padding: '0', display: 'flex'}}>
                 <Card
                   alt="Wolverine"
                   color="secondary"
@@ -236,12 +266,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -293,12 +318,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -350,12 +370,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -407,12 +422,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -464,12 +474,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -521,12 +526,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -578,12 +578,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -635,12 +630,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -692,12 +682,7 @@ const Home = () => {
                   }}
                 >
                   { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  {/* <TypewriterText
-                    color="#000000"
-                    text={activeCardName == '' ? activeCardName : 'Wolverine'}
-                    typingSpeed={70}
-                    sx={{fontWeight: '700'}}
-                  /> */}
+                  
                   <Scrollbar theme="grayscale">
                   <Text variant="small">
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
@@ -729,7 +714,7 @@ const Home = () => {
                     Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
                   </Text>
                 </Card>
-              </Box>
+              </Box> */}
             </Carousel>
             {/* <Card
               alt="Wolverine"
@@ -786,12 +771,13 @@ const Home = () => {
               name="blankbox"
               pattern='solid'
               color='black'
-              sx={{ml: '.5vw', padding: '0'}}
+              sx={{ml: '.5vw', padding: '0', height: '100%'}}
             >
               
             <Container
               sx={{
-                height: '78vh',
+                height: '100%',
+                overflowY: 'hidden',
                 position: 'relative',
                 width: '100%',
               }}

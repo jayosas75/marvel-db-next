@@ -4,6 +4,7 @@ import {Tabs, Tab, TabContent, Scrollbar, Select, Pager, Box} from 'retro-react'
 import styles from '../page.module.css'
 
 const OptionsTabs = ({history}) => {
+    const messages = [ history, 'Weight', 'Age'];
     const BoxSxObject = {
       width: '100%',
       backgroundColor: '#000'
@@ -15,23 +16,15 @@ const OptionsTabs = ({history}) => {
         pattern="stripes"
         sx={BoxSxObject}
       >
-        <Tab label="tab1">
-          Intro <small>x</small>
+        <Tab sx={{maxWidth: '200px', overflow: 'hidden', maxHeight: '43px', lineHeight: '28px'}} label="tab1">
+          {history} <small>x</small>
         </Tab>
         <TabContent label="tab1" sx={{padding: '0'}}>
           <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <Pager
               sx={{alignSelf: 'center', justifySelf: 'center'}}
               color="greyscale-dark"
-              messages={[
-                'Wolverine Stats',
-                'Weight: 200lbs',
-                'Height: 5\'10"',
-                'Weakness: Jean',
-                'Skill: Retractable Claws',
-                'Skill: Healing',
-                'Skill: Endurance'
-              ]}
+              messages={messages}
               onButtonPress={function noRefCheck(){}}
           />
           </Box>

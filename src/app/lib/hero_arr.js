@@ -1,11 +1,11 @@
 export const HeroArr = [
   'Abomination',
-  'Abyss',
+  'Ancient One',
   'Balder the Brave',
   'Black Cat',
   'The Cabal',
   'Captain America',
-  'Daken',
+  // 'Daken',
   'Deadpool',
   'Ebony Maw',
   'Enchantress',
