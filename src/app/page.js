@@ -19,7 +19,7 @@ import { Container,
   Carousel,
   StarField,
   Input,
-  Autocomplete,
+  Spinner,
   Checkbox,
   Divider,
   MouseTrail,
@@ -78,7 +78,7 @@ const Home = () => {
         <AppContainer>
           <OptionsBox>
             <Text variant="h6" sx={{m: '.35rem'}}>
-              <strong>Options</strong>
+              <strong style={{alignSelf: 'end'}}> Options </strong>
             </Text>
             <StyledInput
               color="warn"
@@ -157,7 +157,6 @@ const Home = () => {
               justifyContent: 'start',
               alignSelf: 'start',
               width: ["100vw","44vw","44vw"],
-              height: '100%',
             }}
           >
             <Carousel
@@ -168,620 +167,22 @@ const Home = () => {
               <Box color='success' sx={{padding: '0', display: 'flex'}}>
                 <FirstCard name={activeCardName}/>
                 <BackgroundCard name={nextCardName} />
-                {/* <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card> */}
-                
               </Box>
-
-              {/* <Box color='success' sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box> */}
-
-              {/* <Box color='success' sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
+              <Box color='success' sx={{padding: '0', display: 'flex'}}>
+                <FirstCard name={activeCardName}/>
+                <BackgroundCard name={nextCardName} />
               </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box>
-              <Box sx={{padding: '0', display: 'flex'}}>
-                <Card
-                  alt="Wolverine"
-                  color="secondary"
-                  footer="All Information from Marvel DB"
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="dots"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    zIndex: '1000',
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                  }}
-                >
-                  { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-                  
-                  <Scrollbar theme="grayscale">
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                  </Scrollbar>
-                </Card>
-                <Card
-                  alt="Wolverine"
-                  color="warn"
-                  footer="All Information from Marvel DB"
-                  header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-                  image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-                  pattern="noise"
-                  rounded
-                  sx={{
-                    // height: '75vh', //632px
-                    // width: '48vw', //463px
-                    // height: '632px', //632px
-                    // width: '463px', //463px
-                    width: '356px',
-                    height: '486px',
-                    zIndex: '999',
-                    ml: ['-10vw','-20vw','-20vw']
-                  }}
-                >
-                  <Text variant="small">
-                    Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                  </Text>
-                </Card>
-              </Box> */}
             </Carousel>
-            {/* <Card
-              alt="Wolverine"
-              color="secondary"
-              footer="All Information from Marvel DB"
-              image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-              pattern="dots"
-              rounded
-              sx={{
-                // height: '75vh', //632px
-                // width: '48vw', //463px
-                zIndex: '1000',
-                // height: '632px', //632px
-                // width: '463px', //463px
-                width: '356px',
-                height: '486px',
-              }}
-            >
-              { activeCardName !== '' ? <Text variant='body1'>{activeCardName}</Text> : <Text variant='body1'>Wolverine</Text>}
-              <Scrollbar theme="grayscale">
-              <Text variant="small">
-                Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-                Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-              </Text>
-              </Scrollbar>
-            </Card>
-            <Card
-              alt="Wolverine"
-              color="warn"
-              footer="All Information from Marvel DB"
-              header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Wolverine</Text>}
-              image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
-              pattern="noise"
-              rounded
-              sx={{
-                // height: '75vh', //632px
-                // width: '48vw', //463px
-                // height: '632px', //632px
-                // width: '463px', //463px
-                width: '356px',
-                height: '486px',
-                zIndex: '999',
-                ml: ['-10vw','-20vw','-20vw']
-              }}
-            >
-              <Text variant="small">
-                Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
-              </Text>
-            </Card> */}
           </Box>
 
           <Box
               name="blankbox"
               pattern='solid'
               color='black'
-              sx={{ml: '.5vw', padding: '0', height: '100%'}}
+              sx={{ml: '.5vw', padding: '0'}}
             >
               
-            <Container
-              sx={{
-                height: '100%',
-                overflowY: 'hidden',
-                position: 'relative',
-                width: '100%',
-              }}
-            > 
+            <Container> 
               <MouseTrail
                 offset={{
                   x: 0,
@@ -791,9 +192,41 @@ const Home = () => {
                 particleSize={3}
               />
               <StarField
-                numStars={400}
-                size={2}
-                speed={1}
+                numStars={300}
+                size={1}
+                speed={0.5}
+                starColor="white"
+              />
+            </Container>
+            <Container> 
+              <MouseTrail
+                offset={{
+                  x: 0,
+                  y: 0
+                }}
+                particleColor="rainbow"
+                particleSize={3}
+              />
+              <StarField
+                numStars={300}
+                size={1}
+                speed={0.5}
+                starColor="white"
+              />
+            </Container>
+            <Container> 
+              <MouseTrail
+                offset={{
+                  x: 0,
+                  y: 0
+                }}
+                particleColor="rainbow"
+                particleSize={3}
+              />
+              <StarField
+                numStars={300}
+                size={1}
+                speed={0.5}
                 starColor="white"
               />
             </Container>

@@ -3,11 +3,11 @@ import {Container} from 'retro-react'
 
 const AppContainer = ({children}) => {
     const sxObject = {
-        background: '#000',
-        py: '1.5vh',
+        // background: '#000',
+        // py: '1.5vh',
         display: 'flex',
-        justifyContent: 'start',
-        alignItems: 'start',
+        justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: ['column','row','row']
     };
     return (

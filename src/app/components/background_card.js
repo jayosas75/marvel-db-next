@@ -3,13 +3,11 @@ import {Container, Card, Scrollbar, Text} from 'retro-react'
 
 const BackgroundCard = ({name, image}) => {
     const sxObject = {
-        // height: '75vh', //632px
           // width: '48vw', //463px
           zIndex: '999',
-          // height: '632px', //632px
           // width: '463px', //463px
           width: '356px',
-          height: '486px',
+          maxHeight: '486px',
           ml: ['-10vw','-20vw','-20vw']
     };
     return (
@@ -23,7 +21,9 @@ const BackgroundCard = ({name, image}) => {
         rounded
         sx={sxObject}>
           { name !== '' ? <Text variant='body1'>{name}</Text> : <Text variant='body1'>Wolverine</Text>} 
-        <Text variant="small">{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}{name}</Text>
+          <Text variant="small">
+          Get ready to rock and roll, fellow cybernauts! As we embark on this wicked journey through the World Wide Web, we'll uncover hidden digital treasures and ride the gnarliest of cyber waves. So dust off your dial-up modems, grab your neon-colored fanny packs, and join us on this tubular trip down memory lane. Remember to always save your progress on a floppy disk, and be excellent to each other. Cowabunga, dude!
+        </Text>
       </Card>
     )
 }
