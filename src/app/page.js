@@ -30,7 +30,6 @@ import styles from './page.module.css'
 import { traceGlobals } from 'next/dist/trace/shared'
 
 const StyledInput = styled(Input)`
-  width: 100%;
   backgroundColor: orange;
 `;
 
@@ -156,7 +155,7 @@ const Home = () => {
               display: 'flex',
               justifyContent: 'start',
               alignSelf: 'start',
-              width: ["100vw","44vw","44vw"],
+              // width: ["100vw","44vw","44vw"],
             }}
           >
             <Carousel
@@ -230,6 +229,23 @@ const Home = () => {
                 starColor="white"
               />
             </Container>
+            <Container> 
+              <MouseTrail
+                offset={{
+                  x: 0,
+                  y: 0
+                }}
+                particleColor="rainbow"
+                particleSize={3}
+              />
+              <StarField
+                numStars={300}
+                size={1}
+                speed={0.5}
+                starColor="white"
+              />
+            </Container>
+            
             </Box>
         </AppContainer>
     </ThemeProvider>

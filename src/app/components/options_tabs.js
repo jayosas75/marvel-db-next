@@ -6,7 +6,6 @@ import styles from '../page.module.css'
 const OptionsTabs = ({history}) => {
     const messages = [ 'Hello Earthling', 'Name: Wolverine ', 'Weight: 200lbs', 'Universe: Marvel'];
     const BoxSxObject = {
-      width: '100%',
       backgroundColor: '#000'
     };
     return (
@@ -37,16 +36,16 @@ const OptionsTabs = ({history}) => {
         <Select
           color="secondary"
           defaultValue=""
-          label="12-11-23 | 10:07PM" //timestamp
+          label="1-27-24" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
+          title="1-27-24"
           sx={{
-            width: '100%',
             bg: 'success'
           }}
         >
           <option className={styles.option} value="">
-            {history}
+            {/* {history} */} Wolverine
           </option>
           {/* <option className={styles.option} value="">
             Spiderman 3099
@@ -55,11 +54,12 @@ const OptionsTabs = ({history}) => {
         <Select
           color="warn"
           defaultValue=""
-          label="2023-12-11 | 10:42PM" //timestamp
+          label="1-26-24" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
+          title="1-26-24"
           sx={{
-            width: '100%'
+            maxWidth: '100%'
           }}
         >
           <option className={styles.option} value="">
@@ -67,13 +67,14 @@ const OptionsTabs = ({history}) => {
           </option>
         </Select>
         <Select
+          title="1-26-24"
           color="primary"
           defaultValue=""
-          label="2023-12-11 | 10:42PM" //timestamp
+          label="1-26-24" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
           sx={{
-            width: '100%'
+            maxWidth: '100%'
           }}
         >
           <option className={styles.option} value="">
@@ -83,11 +84,11 @@ const OptionsTabs = ({history}) => {
         <Select
           color="error"
           defaultValue=""
-          label="2023-12-11 | 10:42PM" //timestamp
+          label="1-26-24" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
           sx={{
-            width: '100%'
+            maxWidth: '100%'
           }}
         >
           <option className={styles.option} value="">
@@ -108,7 +109,6 @@ const OptionsTabs = ({history}) => {
           onChange={function noRefCheck(){}}
           size="small"
           sx={{
-            width: '100%',
             bg: 'success'
           }}
         >
@@ -122,9 +122,6 @@ const OptionsTabs = ({history}) => {
           label="****" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
-          sx={{
-            width: '100%'
-          }}
         >
           <option className={styles.option} value="">
             Captain America
@@ -136,9 +133,6 @@ const OptionsTabs = ({history}) => {
           label="***" //timestamp
           onChange={function noRefCheck(){}}
           size="small"
-          sx={{
-            width: '100%'
-          }}
         >
           <option className={styles.option} value="">
             Loki

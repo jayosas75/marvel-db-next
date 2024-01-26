@@ -3,10 +3,8 @@ import {Container, Card, Scrollbar, Text} from 'retro-react'
 
 const BackgroundCard = ({name, image}) => {
     const sxObject = {
-          // width: '48vw', //463px
           zIndex: '999',
-          // width: '463px', //463px
-          width: '356px',
+          maxWidth: '356px',
           maxHeight: '486px',
           ml: ['-10vw','-20vw','-20vw']
     };
@@ -15,7 +13,7 @@ const BackgroundCard = ({name, image}) => {
         alt="Wolverine"
         color="warn"
         footer="All Information from Marvel DB"
-        header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Next</Text>}
+        // header={<Text sx={{paddingLeft: '1.5vw', paddingBottom: '1vh'}} align="left">Next</Text>}
         image="https://i.etsystatic.com/8883904/r/il/731a74/4274330518/il_570xN.4274330518_822l.jpg"
         pattern="noise"
         rounded
