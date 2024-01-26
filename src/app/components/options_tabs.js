@@ -5,21 +5,17 @@ import styles from '../page.module.css'
 
 const OptionsTabs = ({history}) => {
     const messages = [ 'Hello Earthling', 'Name: Wolverine ', 'Weight: 200lbs', 'Universe: Marvel'];
-    const BoxSxObject = {
-      backgroundColor: '#000'
-    };
     return (
       <Tabs
         color="primary"
         defaultActiveTabLabel="tab1"
         pattern="stripes"
-        sx={BoxSxObject}
       >
-        <Tab sx={{maxWidth: '200px', overflow: 'hidden', maxHeight: '43px', lineHeight: '28px'}} label="tab1">
+        <Tab label="tab1">
           Pager
         </Tab>
         <TabContent label="tab1" sx={{padding: '0'}}>
-          <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <Box>
             <Pager
               sx={{alignSelf: 'center', justifySelf: 'center'}}
               color="greyscale-dark"
@@ -28,10 +24,10 @@ const OptionsTabs = ({history}) => {
           />
           </Box>
         </TabContent>
-        <Tab sx={{fontSize: '1.1rem'}} label="tab2">
+        <Tab label="tab2">
           History
         </Tab>
-        <TabContent sx={{bg: 'success', border: '2px solid #504a4a', maxHeight: '250px', overflowY: 'scroll'}} label="tab2">
+        <TabContent sx={{bg: 'success', border: '2px solid #504a4a', overflowY: 'auto'}} label="tab2">
         <Scrollbar theme="grayscale">
         <Select
           color="secondary"
@@ -97,7 +93,7 @@ const OptionsTabs = ({history}) => {
         </Select>
         </Scrollbar>
         </TabContent>
-        <Tab sx={{fontSize: '1.1rem'}} label="tab3">
+        <Tab label="tab3">
           Faves
         </Tab>
         

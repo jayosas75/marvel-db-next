@@ -7,7 +7,7 @@ const AppContainer = ({children}) => {
         // py: '1.5vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'start',
         flexDirection: ['column','row','row']
     };
     return (

@@ -4,8 +4,8 @@ import {Container, Card, Scrollbar, Text} from 'retro-react'
 const BackgroundCard = ({name, image}) => {
     const sxObject = {
           zIndex: '999',
-          maxWidth: '356px',
-          maxHeight: '486px',
+          // maxWidth: '356px',
+          // maxHeight: '486px',
           ml: ['-10vw','-20vw','-20vw']
     };
     return (

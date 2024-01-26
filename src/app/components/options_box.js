@@ -7,6 +7,7 @@ const OptionsBox = ({children}) => {
         flexDirection: 'column',
         justifyContent: 'start',
         padding: '0',
+        maxWidth: '500px',
         // width: ['100%', '100%', '25vw'],
         mr: '1vw',
     };

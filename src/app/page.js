@@ -76,8 +76,8 @@ const Home = () => {
       <Header />
         <AppContainer>
           <OptionsBox>
-            <Text variant="h6" sx={{m: '.35rem'}}>
-              <strong style={{alignSelf: 'end'}}> Options </strong>
+            <Text variant="h3" sx={{m: '.35rem'}}>
+              <strong>Options</strong>
             </Text>
             <StyledInput
               color="warn"
@@ -153,9 +153,8 @@ const Home = () => {
             sx={{
               alignItems: 'center',
               display: 'flex',
-              justifyContent: 'start',
-              alignSelf: 'start',
-              // width: ["100vw","44vw","44vw"],
+              justifyContent: 'center',
+              width: ["100vw","44vw","44vw"],
             }}
           >
             <Carousel
@@ -188,7 +187,7 @@ const Home = () => {
                   y: 0
                 }}
                 particleColor="rainbow"
-                particleSize={3}
+                particleSize={4}
               />
               <StarField
                 numStars={300}
@@ -204,7 +203,7 @@ const Home = () => {
                   y: 0
                 }}
                 particleColor="rainbow"
-                particleSize={3}
+                particleSize={2}
               />
               <StarField
                 numStars={300}
@@ -220,7 +219,7 @@ const Home = () => {
                   y: 0
                 }}
                 particleColor="rainbow"
-                particleSize={3}
+                particleSize={1}
               />
               <StarField
                 numStars={300}
@@ -229,24 +228,7 @@ const Home = () => {
                 starColor="white"
               />
             </Container>
-            <Container> 
-              <MouseTrail
-                offset={{
-                  x: 0,
-                  y: 0
-                }}
-                particleColor="rainbow"
-                particleSize={3}
-              />
-              <StarField
-                numStars={300}
-                size={1}
-                speed={0.5}
-                starColor="white"
-              />
-            </Container>
-            
-            </Box>
+          </Box>
         </AppContainer>
     </ThemeProvider>
   )

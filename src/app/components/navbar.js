@@ -9,7 +9,7 @@ const Header = () => {
                 pattern="solid"
             >
                 <NavLogo>
-                <Text variant='h2' color="secondary">
+                <Text variant='h4' color="secondary">
                     Quick Marvel Cards
                 </Text>
                 </NavLogo>
