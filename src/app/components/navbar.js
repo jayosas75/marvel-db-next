@@ -40,7 +40,8 @@ const Header = () => {
                 <SevenSegmentDisplay
                     color="white"
                     segmentThickness="none"
-                    value={2}
+                    value={22}
+                    title="website counter"
                     size='small'
                 />
             </Navbar>

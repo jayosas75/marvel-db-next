@@ -3,13 +3,9 @@ import {Container, Card, Scrollbar, Text} from 'retro-react'
 
 const FirstCard = ({name, image}) => {
     const sxObject = {
-        // height: '75vh', //632px
-          // width: '48vw', //463px
           zIndex: '1000',
-          // height: '632px', //632px
-          // width: '463px', //463px
           width: '356px',
-          height: '486px',
+          maxHeight: '486px',
     };
     return (
       <Card
